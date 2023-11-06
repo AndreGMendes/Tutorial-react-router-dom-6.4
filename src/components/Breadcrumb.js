@@ -1,4 +1,5 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
+
 
 export default function Breadcrumb() {
   const location = useLocation();
@@ -21,7 +22,15 @@ export default function Breadcrumb() {
 
   return (
     <div className="breadcrumb">
-      {crumb}
+      {crumb.length === 0 ? (
+        <>
+          <span>&gt;</span>{<NavLink to="/"> <i>home</i></NavLink>}
+        </>
+      ) : (
+        <>
+          <span>&gt;</span>{crumb}
+        </>
+      )}
     </div>
   )
 }

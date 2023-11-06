@@ -151,6 +151,8 @@ form label span {
 .breadcrumb {
   max-width: 1200px;
   margin: 20px auto;
+  display: flex;
+  flex-direction: row;
 }
 .breadcrumb > * {
   display: inline-block;
